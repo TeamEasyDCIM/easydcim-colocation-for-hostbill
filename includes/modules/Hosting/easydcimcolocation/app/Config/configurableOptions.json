@@ -1,0 +1,62 @@
+[
+    {
+        "id": "11",
+        "type": "searchselect",
+        "required": "0",
+        "name": "Model",
+        "key": "",
+        "variable": "model",
+        "description": "",
+        "category": "",
+        "product_id": "18",
+        "copy_of": "11",
+        "options": "50",
+        "config": {
+            "upgradefee": "0.00",
+            "downgradefee": "0.00",
+            "conditionals": []
+        },
+        "sort_order": "3",
+        "group_id": "0",
+        "ftype": "searchselect",
+        "premade": true,
+        "items": [
+            {
+                "id": "15",
+                "category_id": "11",
+                "name": "test",
+                "copy_of": "15"
+            }
+        ]
+    },
+    {
+        "id": "12",
+        "type": "searchselect",
+        "required": "0",
+        "name": "Location",
+        "key": "",
+        "variable": "location",
+        "description": "",
+        "category": "",
+        "product_id": "18",
+        "copy_of": "12",
+        "options": "50",
+        "config": {
+            "upgradefee": "0.00",
+            "downgradefee": "0.00",
+            "conditionals": []
+        },
+        "sort_order": "4",
+        "group_id": "0",
+        "ftype": "searchselect",
+        "premade": true,
+        "items": [
+            {
+                "id": "16",
+                "category_id": "12",
+                "name": "test",
+                "copy_of": "16"
+            }
+        ]
+    }
+]
