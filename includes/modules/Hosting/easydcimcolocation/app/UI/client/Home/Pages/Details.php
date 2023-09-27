@@ -24,7 +24,8 @@ class Details
           'model'=>$details->model,
           'label'=>$details->label,
           'location'=>$details->location->name,
-          'ipaddresses'=>"<div class='overflow'>".implode(',',$details->ip_addresses)."</div>"
+          'labeledRackWithPosition'=>$details->labeledRackWithPosition,
+          'ipaddresses'=>"<div class='overflow'>".implode('<br>',$details->ip_addresses)."</div>"
         ];
     }
 }

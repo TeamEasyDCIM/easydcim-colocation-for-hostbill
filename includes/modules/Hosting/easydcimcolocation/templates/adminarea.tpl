@@ -19,12 +19,62 @@
                     <div class="lu-h5 lu-m-b-3x lu-m-t-2x">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.statusWidgetTitle}</div>
                     <div class="lu-tiles lu-row lu-row--eq-height">
                         <div class="lu-col-xs-6 lu-col-md-20p">
-                            <a href="{$autoLoginLink}" target="_blank" class="lu-tile lu-tile--btn lu-tooltip drop-target drop-abutted drop-abutted-top drop-element-attached-bottom drop-element-attached-center drop-target-attached-top drop-target-attached-center">
+                            <a href="javascript:;" class="lu-tile lu-tile--btn lu-tooltip drop-target drop-abutted drop-abutted-top drop-element-attached-bottom drop-element-attached-center drop-target-attached-top drop-target-attached-center" onclick="generateModal(this,'{$lang.serverAA.adminServicesTabFields.logInToPanelInstance.logInToPanelForm.confirmLogInToPanelInstance}','logIntoPanel')">
                                 <div class="lu-i-c-6x">
                                     <img class="serviceActionsImages" src="{$assetsURL}/img/logIntopanel.png" alt="">
                                 </div>
-                                <span class="lu-tile__title">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.logIntoPanel.logIntoPanel}</span>
+                                <span class="lu-tile__title">{$lang.serverAA.adminServicesTabFields.logInToPanelInstance.modal.logInToPanelInstance}</span>
                             </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lu-row">
+                    <div class="lu-col-md-12">
+                        <div class="lu-widget widgetActionComponent vueDatatableTable">
+                            <div class="lu-widget__header">
+                                <div class="lu-widget__top lu-top">
+                                    <div class="lu-top__title">
+                                        {$lang.serverAA.servicePageIntegration.mainContainer.details.tableTitle}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lu-widget__body">
+                                <div data-table-container="" data-check-container="" class="lu-t-c  datatableLoader">
+                                    <div class="dataTables_wrapper no-footer">
+                                        <div>
+                                            <table width="100%" role="grid" class="lu-table lu-table--mob-collapsible dataTable no-footer dtr-column" style="margin-top:0px!important">
+                                                <tbody>
+                                                <tr role="row">
+                                                        <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.model}</td>
+                                                        <td>{$serverInformation.model}</b></td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.label}</td>
+                                                        <td>{$serverInformation.label}</b></td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.location}</td>
+                                                        <td>{$serverInformation.location}</b></td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.location.tableField.labeledRackWithPosition}</td>
+                                                        <td>{$serverInformation.labeledRackWithPosition}</b></td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.ipaddresses}</td>
+                                                        <td>{$serverInformation.ipaddresses}</b></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="lu-preloader-container lu-preloader-container--full-screen lu-preloader-container--overlay" style="display: none;">
+                                                <div class="lu-preloader lu-preloader--sm">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

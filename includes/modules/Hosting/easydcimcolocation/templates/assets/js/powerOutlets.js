@@ -1,3 +1,11 @@
+$(document).ready(function (e) {
+    $('#powerOutlets').DataTable({
+        lengthChange: false,
+        ordering: false,
+        searching: false,
+        info: false
+    });
+});
 function loadChangeStateModal(encodedId) {
     let id = JSON.parse(atob(encodedId));
     const layers = $('#layers');
@@ -7,7 +15,7 @@ function loadChangeStateModal(encodedId) {
         '            <div class="lu-modal__top lu-top"><i\n' +
         '                class="lu-top__icon lu-zmdi lu-zmdi-info-outline lu-text-success"></i>\n' +
         '                <div class="lu-top__title lu-type-5 lu-text-success">\n' +
-        '                    Change State\n' +
+        '                    Change Power Outlet State\n' +
         '                </div>\n' +
         '                <div class="lu-top__toolbar">\n' +
         '                    <button data-dismiss="lu-modal" aria-label="Close"\n' +
@@ -18,12 +26,12 @@ function loadChangeStateModal(encodedId) {
         '            <div class="lu-modal__body">\n' +
         '                <form id="changeState">' +
         '                   <div class="lu-form-group">' +
-        '                       <label class="lu-form-label"> State </label> ' +
+        '                       <label class="lu-form-label"> Select Option: </label> ' +
         '                       <select id="changeStateSelect" name="changeStateSelect" class="lu-form-control selectized">\n' +
         '                           <option value="outletOn">Outlet On</option>\n' +
         '                           <option value="outletOff">Outlet Off</option>\n' +
         '                           <option value="outletReboot">Outlet Reboot</option>\n' +
-        '                       </select>\n' +
+        '                       </select></div>\n' +
         '                    <input type="hidden" name="indexID" value="'+id.indexID+'"> <input type="hidden" name="deviceID" value="'+id.deviceID +'">\n' +
         '                </form>\n' +
         '            </div>\n' +

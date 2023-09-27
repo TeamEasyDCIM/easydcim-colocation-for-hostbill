@@ -17,12 +17,15 @@ class easydcimcolocation_controller extends HBController
         $params['account']['clientsdetails'] = $clientModel->getClient($params['account']['client_id']);
         $this->client = (new EasyDCIMConfigFactory())->fromParams($this->serverDetails,$params['account']);
         $this->api = new EasyDCIM($this->client);
-        $this->serviceActions = new ServiceActions($this->api);
+        $this->serviceActions = new ServiceActions($this->api,$this->client);
         $this->details = new Details($this->api);
         $this->autoLoginLink = new AutoLoginLink();
 
         $assetsUrl = './includes/modules/Hosting/easydcimcolocation/templates/assets';
-
+        if (isset($_GET['deviceButtonsAction']))
+        {
+            $this->serviceActions->manageServiceActions($_GET['deviceButtonsAction']);
+        }
         $this->template->render(APPDIR_MODULES.'Hosting/easydcimcolocation/templates/service_details.tpl');
         $this->template->assign('assetsURL',$assetsUrl);
         $this->template->assign('autoLoginLink',$this->autoLoginLink->createRawUrl($this->client));

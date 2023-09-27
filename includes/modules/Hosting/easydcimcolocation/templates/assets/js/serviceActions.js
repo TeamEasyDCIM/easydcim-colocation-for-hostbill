@@ -95,26 +95,8 @@ function hideCSRModal(pageModalCover, modalGenerateCsr)
 function generateCSRModal(message,action) {
     let title = '';
     switch (action) {
-        case 'boot':
-            title = 'Boot';
-            break;
-        case 'shutdown':
-            title = 'Shutdown';
-            break;
-        case 'reboot':
-            title = 'Reboot';
-            break;
-        case 'bmcColdReset':
-            title = 'BMC Cold Reset';
-            break;
-        case 'enableRescueMode':
-            title = 'Enable Rescue Mode';
-            break;
-        case 'kvmConsole':
-            title = 'KVM Console';
-            break;
-        case 'noVNCConsole':
-            title = 'NO VNC Console';
+        case 'logIntoPanel':
+            title = 'Log In To Panel';
             break;
 
     }

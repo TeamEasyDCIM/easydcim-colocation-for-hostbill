@@ -14,6 +14,7 @@ use ModulesGarden\Servers\EasyDCIMv2\App\UI\admin\accountDetails\Pages\ServiceAc
 use ModulesGarden\Servers\EasyDCIMv2\App\UI\admin\accountDetails\Pages\PowerUsageStatistics;
 use ModulesGarden\Servers\EasyDCIMv2\App\FileReader\Reader;
 use ModulesGarden\Servers\EasyDCIMv2\App\UI\admin\accountDetails\Buttons\AutoLoginLink;
+use ModulesGarden\Servers\EasyDCIMv2\App\UI\client\Home\Pages\Details;
 
 class easydcimcolocation_controller extends HBController
 {
@@ -34,12 +35,18 @@ class easydcimcolocation_controller extends HBController
     protected $serviceActions;
     protected $servers;
     protected $autoLoginLink;
+    protected $configFieldsModel;
+    /**
+     * @var Details
+     */
+    protected $details;
 
     public function productdetails($params)
     {
         $serverId = $this->getServerId($params['id']);
         if ($serverId != null && $serverId != '')
         {
+            $this->configFieldsModel = HBLoader::LoadModel("ConfigFields");
             $serverHelper = HBLoader::LoadModel('Servers');
             $this->servers = $serverHelper->findServersBy('module','easydcimcolocation');
             $this->serverDetails = $this->getServerDetails($this->getServerId($params['id']));
@@ -70,6 +77,8 @@ class easydcimcolocation_controller extends HBController
             $this->template->assign('adminEmailTemplateList',$this->emailNotifications->getAdminEmailTemplates());
             $this->template->assign('clientEmailTemplateList',$this->emailNotifications->getClientEmailTemplates());
             $this->template->assign('moduleConfiguration',$this->parseConfig());
+            $this->template->assign('configurableOptions',$this->configFieldsModel->exportData($params['id']));
+            $this->template->assign('productId',$params['id']);
         }
 
     }
@@ -95,8 +104,13 @@ class easydcimcolocation_controller extends HBController
             $this->bandwidth = new Bandwidth($this->api);
             $this->powerUsageStatistics = new PowerUsageStatistics($this->api);
             $this->graphs = new Graphs($this->api);
-            $this->serviceActions = new ServiceActions($this->api);
+            $this->serviceActions = new ServiceActions($this->api,$this->client);
             $this->autoLoginLink = new AutoLoginLink();
+            $this->details = new Details($this->api);
+//            echo '<pre>';
+//            print_r($this->details->getDetailsInformation());
+//            die;
+
 
             if (isset($_GET['graphs']))
             {
@@ -112,6 +126,7 @@ class easydcimcolocation_controller extends HBController
             $this->template->assign('custom_template',$path);
             $this->template->assign('assetsURL',$assetsUrl);
             $this->template->assign('rawObject',$this);
+            $this->template->assign('serverInformation',$this->details->getDetailsInformation());
             $this->template->assign('powerUsageStatistics',$this->powerUsageStatistics->getData());
             $this->template->assign('autoLoginLink',$this->autoLoginLink->createRawUrl($this->client));
             $this->template->assign('lang',$lang);

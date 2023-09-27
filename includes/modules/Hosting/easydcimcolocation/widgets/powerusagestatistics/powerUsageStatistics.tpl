@@ -8,41 +8,43 @@
 <script src="{$assetsURL}/js/chartjs-adapter-date-fns.bundle.min.js"></script>
 <script src="{$assetsURL}/js/powerUsage.js"></script>
 <div id="layers">
-    <div class="lu-row">
-        <div class="lu-col-md-12">
-            <div class="lu-widget widgetActionComponent vueDatatableTable">
-                <div class="lu-widget__header">
-                    <div class="lu-widget__top lu-top">
-                        <div class="lu-top__title">
-                            {$lang.serverAA.servicePageIntegration.mainContainer.powerUsageStatisticsTable.powerUsageStatisticsTable}
+    {if $configuration.BlockPowerUsageTable != 'on'}
+        <div class="lu-row">
+            <div class="lu-col-md-12">
+                <div class="lu-widget widgetActionComponent vueDatatableTable">
+                    <div class="lu-widget__header">
+                        <div class="lu-widget__top lu-top">
+                            <div class="lu-top__title">
+                                {$lang.serverAA.servicePageIntegration.mainContainer.powerUsageStatisticsTable.powerUsageStatisticsTable}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="lu-widget__body">
-                    <div data-table-container="" data-check-container=""
-                         class="lu-t-c  datatableLoader">
-                        <div class="dataTables_wrapper no-footer">
-                            <div>
-                                <table width="100%" role="grid"
-                                       class="lu-table lu-table--mob-collapsible dataTable no-footer dtr-column">
-                                    <thead>
-                                    <tr role="row">
-                                        <th><span class="lu-table__text">{$lang.serverAA.servicePageIntegration.mainContainer.powerUsageStatisticsTable.table.powerUsageInterval}</span></th>
-                                        <th><span class="lu-table__text">{$lang.serverAA.servicePageIntegration.mainContainer.powerUsageStatisticsTable.table.AVG_TOTAL_USAGE}</span></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {foreach from=$rawObject->powerUsageStatistics->getData() key=myId item=i}
+                    <div class="lu-widget__body">
+                        <div data-table-container="" data-check-container=""
+                             class="lu-t-c  datatableLoader">
+                            <div class="dataTables_wrapper no-footer">
+                                <div>
+                                    <table width="100%" role="grid"
+                                           class="lu-table lu-table--mob-collapsible dataTable no-footer dtr-column">
+                                        <thead>
                                         <tr role="row">
-                                            <td>{$i.powerUsageInterval}</td>
-                                            <td>{$i.AVG_TOTAL_USAGE}</td>
+                                            <th><span class="lu-table__text">{$lang.serverAA.servicePageIntegration.mainContainer.powerUsageStatisticsTable.table.powerUsageInterval}</span></th>
+                                            <th><span class="lu-table__text">{$lang.serverAA.servicePageIntegration.mainContainer.powerUsageStatisticsTable.table.AVG_TOTAL_USAGE}</span></th>
                                         </tr>
-                                    {/foreach}
-                                    </tbody>
-                                </table>
-                                <div class="lu-preloader-container lu-preloader-container--full-screen lu-preloader-container--overlay"
-                                     style="display: none;">
-                                    <div class="lu-preloader lu-preloader--sm"></div>
+                                        </thead>
+                                        <tbody>
+                                        {foreach from=$rawObject->powerUsageStatistics->getData() key=myId item=i}
+                                            <tr role="row">
+                                                <td>{$i.powerUsageInterval}</td>
+                                                <td>{$i.AVG_TOTAL_USAGE}</td>
+                                            </tr>
+                                        {/foreach}
+                                        </tbody>
+                                    </table>
+                                    <div class="lu-preloader-container lu-preloader-container--full-screen lu-preloader-container--overlay"
+                                         style="display: none;">
+                                        <div class="lu-preloader lu-preloader--sm"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -50,8 +52,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    {/if}
     {if $configuration.PowerUsageStatisticsGraph == 'on'}
         <div class="lu-row">
             <div class="lu-col-md-12">

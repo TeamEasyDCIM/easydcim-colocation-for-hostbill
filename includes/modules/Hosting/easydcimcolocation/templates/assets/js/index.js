@@ -227,26 +227,8 @@ function hideCSRModal(pageModalCover, modalGenerateCsr)
 function generateCSRModal(message,action) {
     let title = '';
     switch (action) {
-        case 'boot':
-            title = 'Boot';
-            break;
-        case 'shutdown':
-            title = 'Shutdown';
-            break;
-        case 'reboot':
-            title = 'Reboot';
-            break;
-        case 'bmcColdReset':
-            title = 'BMC Cold Reset';
-            break;
-        case 'enableRescueMode':
-            title = 'Enable Rescue Mode';
-            break;
-        case 'kvmConsole':
-            title = 'KVM Console';
-            break;
-        case 'noVNCConsole':
-            title = 'NO VNC Console';
+        case 'logIntoPanel':
+            title = 'Log In To Panel';
             break;
 
     }
@@ -270,11 +252,9 @@ function generateCSRModal(message,action) {
                             <strong>Error!</strong> <span></span>\n\
                         </div>\n\
                         <form>\n\
-                            <div class="col-md-1"></div>\n\
                               <div class="col-md-10" style="width:80%;">\n\
                                    <span class="message">' + message + '</span>\n\
                               </div>\n\
-                            <div class="col-md-1"></div>\n\
                     </div>\n\
                     <div class="modal-footer panel-footer">\n\
                         <button type="button" id="submitModalBtn' + action + '" class="btn btn-primary">\n\

@@ -50,7 +50,7 @@ class widget_trafficstatistics extends HostingWidget
      */
     public function clientFunction(&$module) {
         $this->params = $module->getAccount();
-        if ($this->params['options']['TrafficStatistics'] != 'on')
+        if (($this->params['options']['BlockBandwidthUsageTable'] == 'on' && $this->params['options']['AggregateTraffic'] != 'on' && $this->params['options']['BlockNetworkPortsTable'] == 'on') || $this->params['options']['TrafficStatistics'] != 'on')
         {
             return 'This page is disabled';
         }
@@ -68,6 +68,7 @@ class widget_trafficstatistics extends HostingWidget
         $variables = [
             'assetsURL'=>  $assetsUrl,
             'rawObject'=>  $this,
+            'configuration'=>  $this->params['options'],
         ];
         return array('trafficStatistics.tpl', $variables);
     }

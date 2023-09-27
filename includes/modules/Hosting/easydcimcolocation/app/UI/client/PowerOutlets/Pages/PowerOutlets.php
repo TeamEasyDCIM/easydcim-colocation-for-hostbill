@@ -26,42 +26,11 @@ class PowerOutlets
         return  $this->prepareData();
     }
 
-    protected function getDevices()
-    {
-        $api = new EasyDCIM($this->client);
-        $filters = new Filters();
-        $filters->setTypeID(5)
-            ->setColocationID($this->client->getEasyServerID());
-
-        return $api->device->getDevice($filters);
-    }
-
 
     private function getOutletList()
     {
-        $devices = $this->getDevices();
-        $outlets = [];
-        foreach ($devices as $device)
-        {
-            $powerOutlets = $this->getPowerPorts($device->id);
-            foreach ($powerOutlets as $powerOutlet)
-            {
-                if ($this->client->getEasyServerID() != $powerOutlet->colocation_id)
-                {
-                    continue;
-                }
-                $powerOutlet->deviceName = $device->label . ' (' . $device->model . ')';
-                $powerOutlet->deviceID   = $device->id;
-                $outlets[]               = $powerOutlet;
-            }
-        }
-        return $outlets;
-    }
-
-    private function getPowerPorts($deviceID)
-    {
-        $api     = new EasyDCIM($this->client);
-        return $api->device->getPortList($deviceID);
+        $api = new EasyDCIM($this->client);
+        return $api->colocation->showColocationPowerPorts();
     }
 
     /**
@@ -73,12 +42,12 @@ class PowerOutlets
         foreach ($this->powerOutlets as $key=>$value)
         {
             $data[] = [
-                'id'=>base64_encode(json_encode(['indexID' => $value->id, 'deviceID' => $value->deviceID])),
+                'id'=>base64_encode(json_encode(['indexID' => $value->id, 'deviceID' => $value->colocation_id])),
                 'status'=>$value->opstate,
                 'number'=>$value->port_number,
                 'label'=>$value->description,
                 'state'=>$value->opstate,
-                'device'=>$value->deviceName,
+                'device'=>$value->labeledParent,
             ];
         }
         return $data;
