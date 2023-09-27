@@ -183,11 +183,9 @@ $lang['ajaxResponses']['partAddedSuccessfully'] = 'Part Requirement Added Succes
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['message'] = 'Define what features and information will be available for customers in the client area.';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['clientAreaFeaturesSection'] = 'Client Area Features';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['generalInfo']['generalInfo'] = 'General Information';
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['generalInfo']['generalInfoSelectAll']['generalInfoSelectAll'] = 'Select All General Information Features';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['generalInfo']['generalInfoSelectAll']['generalInfoSelectAll'] = 'Select All';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['serviceInfo']['serviceInfo'] = 'Service Information';
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['serviceInfo']['serviceInfoSelectAll']['serviceInfoSelectAll'] = 'Select All Service Information Features';
-//$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['baseFeatures']['baseFeatures'] = 'Base Features';
-//$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['baseFeatures']['baseFeaturesSelectAll']['baseFeaturesSelectAll'] = 'Select All Base Features';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['serviceInfo']['serviceInfoSelectAll']['serviceInfoSelectAll'] = 'Select All';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['baseFeatures']['ServerId']['ServerId'] = 'Server Id';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['baseFeatures']['Image']['Image'] = 'Image';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['baseFeatures']['Image']['description'] = 'Enable if you want clients to have access to the "Image" section in the client area.';
@@ -232,7 +230,7 @@ $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFea
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['baseFeatures']['HideHostingInformation']['description'] = 'Hide general Hosting Information on Service Details Page in Client Area';
 
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['locationInfo']['locationInfo'] = 'Location Information';
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['locationInfo']['locationInfoSelectAll']['locationInfoSelectAll'] = 'Select All Location Information Features';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['locationInfo']['locationInfoSelectAll']['locationInfoSelectAll'] = 'Select All';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['locationInfo']['Location']['Location'] = 'Location Name';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['locationInfo']['LabeledRack']['LabeledRack'] = 'Labeled Rack With Position';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['leftSection']['locationInfo']['Floor']['Floor'] = 'Floor';
@@ -242,7 +240,7 @@ $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFea
 
 
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['graphTypes']['graphTypes'] = 'View Graphs';
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['graphTypes']['graphTypesSelectAll']['graphTypesSelectAll'] = 'Select All Graph Types';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['graphTypes']['graphTypesSelectAll']['graphTypesSelectAll'] = 'Select All';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['graphTypes']['Ping']['Ping'] = 'Ping';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['graphTypes']['Ping']['description'] = 'Enable if you want clients to have access to the "Ping" section in the client area.';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['graphTypes']['Status']['Status'] = 'Status';
@@ -256,7 +254,7 @@ $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFea
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['graphTypes']['PollerDuration']['description'] = 'Enable if you want clients to have access to the "Poller Duration" section in the client area.';
 
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['serverActions'] = 'Server Actions';
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['serverActionsSelectAll']['serverActionsSelectAll'] = 'Select All Server Actions';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['serverActionsSelectAll']['serverActionsSelectAll'] = 'Select All';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['RebootServer']['RebootServer'] = 'Reboot Server';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['RebootServer']['description'] = 'Enable if you want clients to have access to the "Reboot Server" section in the client area.';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['BootServer']['BootServer'] = 'Boot Server';
@@ -274,11 +272,11 @@ $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFea
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['noVNCKVMConsole']['noVNCKVMConsole'] = 'noVNC KVM Console';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['serverActions']['noVNCKVMConsole']['description'] = 'Enable if you want clients to have access to the "noVNC KVM Console" section in the client area.';
 
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['modules'] = 'Modules';
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['modulesSelectAll']['modulesSelectAll'] = 'Select All Modules';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['modules'] = 'Management';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['modulesSelectAll']['modulesSelectAll'] = 'Select All';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['TrafficStatistics']['TrafficStatistics'] = 'Traffic Statistics';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['TrafficStatistics']['description'] = 'Enable if you want clients to have access to the "Traffic Statistics" section in the client area.';
-$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['DevicesTraffic']['DevicesTraffic'] = 'Devices Traffic';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['DevicesTraffic']['DevicesTraffic'] = 'Traffic Statistics';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['PowerUsageStatistics']['PowerUsageStatistics'] = 'Power Usage Statistics';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['PowerOutlets']['PowerOutlets'] = 'Power Outlets';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['DevicesTraffic']['description'] = 'Enable if you want clients to have access to the "Devices Traffic" section in the client area.';
@@ -288,6 +286,15 @@ $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFea
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['DNSManager']['description'] = 'Enable if you want clients to have access to the "DNS Manager" section in the client area.';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['PasswordManagement']['PasswordManagement'] = 'Password Management';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['modules']['PasswordManagement']['description'] = 'Enable if you want clients to have access to the "Password Management" section in the client area.';
+
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['blockTrafficStatisticsTables']['blockTrafficStatisticsTables'] = 'Traffic Statistics Tables';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['blockTrafficStatisticsTables']['blockTrafficStatisticsTablesSelectAll']['blockTrafficStatisticsTablesSelectAll'] = 'Select All';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['blockTrafficStatisticsTables']['BlockBandwidthUsageTable']['BlockBandwidthUsageTable'] = 'Hide Bandwidth Usage Table';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['blockTrafficStatisticsTables']['BlockNetworkPortsTable']['BlockNetworkPortsTable'] = 'Hide Network Ports Table';
+
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['blockPowerUsageTables']['blockPowerUsageTables'] = 'Power Usage Statistics Tables';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['blockPowerUsageTables']['blockPowerUsageTablesSelectAll']['blockPowerUsageTablesSelectAll'] = 'Select All';
+$lang['serverAA']['productConfig']['mainContainer']['configForm']['clientAreaFeaturesSection']['rightSection']['blockPowerUsageTables']['BlockPowerUsageTable']['BlockPowerUsageTable'] = 'Hide Power Usage Table';
 
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['serviceNotification']['message'] = '';
 $lang['serverAA']['productConfig']['mainContainer']['configForm']['serviceNotification']['serviceNotification'] = "Email Notifications";
@@ -440,7 +447,7 @@ $lang['serverAA']['adminServicesTabFields']['enableRescueModeInstance']['baseAcc
 $lang['serverAA']['adminServicesTabFields']['enableRescueModeInstance']['baseCancelButton']['title'] = 'Cancel';
 
 $lang['serverAA']['adminServicesTabFields']['logInToPanelInstance']['modal']['logInToPanelInstance'] = 'Log In To Panel';
-$lang['serverAA']['adminServicesTabFields']['logInToPanelInstance']['logInToPanelForm']['confirmLogInToPanelInstance'] = 'Do you want to be redirected to easyDCIM panel?';
+$lang['serverAA']['adminServicesTabFields']['logInToPanelInstance']['logInToPanelForm']['confirmLogInToPanelInstance'] = 'Are you sure that you want to be redirected to the EasyDCIM panel?';
 $lang['serverAA']['adminServicesTabFields']['logInToPanelInstance']['baseAcceptButton']['title'] = 'Confirm';
 $lang['serverAA']['adminServicesTabFields']['logInToPanelInstance']['baseCancelButton']['title'] = 'Cancel';
 
@@ -460,7 +467,7 @@ $lang['serverAA']['servicePageIntegration']['mainContainer']['location']['tableF
 $lang['serverAA']['servicePageIntegration']['mainContainer']['location']['tableField']['address']	= 'Address';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['location']['tableField']['phone']	= 'Phone Number';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['location']['tableField']['description']	= 'Description';
-$lang['serverAA']['servicePageIntegration']['mainContainer']['location']['tableField']['labeledRackWithPosition']	= 'Labeled rack with position';
+$lang['serverAA']['servicePageIntegration']['mainContainer']['location']['tableField']['labeledRackWithPosition']	= 'Labeled Rack With Position';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['location']['tableField']['floor']	= 'Floor';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['location']['noDataAvalible'] = 'No Data Avalible';
 
@@ -487,7 +494,7 @@ $lang['serverAA']['servicePageIntegration']['mainContainer']['generalInformation
 $lang['serverAA']['servicePageIntegration']['mainContainer']['generalInformation']['tableField']['serverID'] = 'Server ID';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['generalInformation']['tableField']['orderID'] = 'Order ID';
 
-$lang['serverAA']['servicePageIntegration']['mainContainer']['details']['tableTitle'] = 'Details';
+$lang['serverAA']['servicePageIntegration']['mainContainer']['details']['tableTitle'] = 'Service Information';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['details']['tableField']['location'] = 'Location';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['details']['tableField']['ipaddresses'] = 'IP Addresses';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['details']['tableField']['model'] = 'Model';
@@ -509,6 +516,9 @@ $lang['serverAA']['servicePageIntegration']['mainContainer']['powerOutlets']['ta
 $lang['serverAA']['servicePageIntegration']['mainContainer']['powerOutlets']['tableField']['outletOn'] = 'Outlet On';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['powerOutlets']['tableField']['outletOff'] = 'Outlet Off';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['powerOutlets']['tableField']['outletReboot'] = 'Outlet Reboot';
+$lang['serverAA']['servicePageIntegration']['mainContainer']['powerOutlets']['tableField']['up'] = 'Outlet On';
+$lang['serverAA']['servicePageIntegration']['mainContainer']['powerOutlets']['tableField']['down'] = 'Outlet Off';
+$lang['serverAA']['servicePageIntegration']['mainContainer']['powerOutlets']['tableField']['reset'] = 'Outlet Reboot';
 
 $lang['serverAA']['servicePageIntegration']['mainContainer']['generalInformationAndLocationSection']['generalInformationAndLocationSection'] = 'Service Informations';
 $lang['serverAA']['servicePageIntegration']['mainContainer']['statusWidget']['enableRescueMode']['tooltip'] = 'Enable Rescue Mode';
@@ -885,3 +895,7 @@ $lang['serverCA']['home']['resetWindowsPassword']['baseAcceptButton']['title'] =
 $lang['serverCA']['home']['resetWindowsPassword']['baseCancelButton']['title'] = 'Cancel';
 $lang['serverCA']['home']['resetWindowsPassword']['resetPasswordForm']['text']['NewPassword'] = 'New Password';
 $lang['ajaxResponses']['PasswordReseted'] = 'A new password has been generated';
+
+
+$lang['enabled'] = 'Enabled';
+$lang['disabled'] = 'Disabled';

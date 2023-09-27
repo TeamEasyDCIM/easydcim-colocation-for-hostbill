@@ -49,7 +49,7 @@ class widget_powerusagestatistics  extends HostingWidget
      */
     public function clientFunction(&$module) {
         $this->params = $module->getAccount();
-        if ($this->params['options']['PowerUsageStatistics'] != 'on')
+        if (($this->params['options']['PowerUsageStatisticsGraph'] != 'on' && $this->params['options']['BlockPowerUsageTable'] == 'on') || $this->params['options']['PowerUsageStatistics'] != 'on')
         {
             return 'This page is disabled';
         }

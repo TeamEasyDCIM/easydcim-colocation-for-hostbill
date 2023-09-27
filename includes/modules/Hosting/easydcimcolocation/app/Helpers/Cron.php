@@ -101,7 +101,10 @@ class Cron
      */
     public function getAllEasyProduct()
     {
-        return DB::table('hb_products')->where('code','=','EasyDCIM')->get();
+        return DB::table('hb_modules_configuration')
+        ->join('hb_products_modules','hb_products_modules.module','=','hb_modules_configuration.id')
+        ->join('hb_products','hb_products_modules.product_id','=','hb_products.id')
+        ->where('hb_modules_configuration.module','=','easydcimcolocation')->get();
     }
 
     /**
@@ -139,6 +142,7 @@ class Cron
             }
             catch (Exception $ex)
             {
+                echo $ex->getMessage();
             }
         }
     }
@@ -159,11 +163,11 @@ class Cron
             throw new Exception('Order ID is empty!');
         }
 
-        if(in_array($lastModuleAction, ['CreateAccount', 'SuspendAccount', 'UnsuspendAccount', 'TerminateAccount']) && ! empty($serverID)) {
+        if(in_array($lastModuleAction, ['CreateAccount', 'SuspendAccount', 'UnsuspendAccount', 'TerminateAccount']) && $serverID != '') {
             $this->synchronizeActiveServices($orderID, $hosting, $lastModuleAction);
         }
 
-        if (empty($serverID))
+        if ($serverID == '')
         {
             $this->synchronizeServices($orderID, $hosting);
         }
@@ -188,21 +192,22 @@ class Cron
 
         if (!empty($info->service->related_id)) {
             if($info->service->status == 'aborted') {
-//                Queue::add('Server', $hosting->id, 'EasyDCIM', $lastModuleAction, 'Service aborted in EasyDCIM');
-//                Logs::save('CRON', $info, "Service aborted in EasyDCIM", $hosting->packageid);
+                DB::table('hb_accounts')->where('id','=',$hosting->id)->update([
+                    'status'=>'Pending'
+                ]);
             }
         }
     }
 
     /**
      * @param $orderID
-     * @param Hosting $hosting
+     * @param $hosting
      * @return void
      */
-    private function synchronizeServices($orderID, Hosting $hosting)
+    private function synchronizeServices($orderID, $hosting)
     {
-        $server = $this->getServer($hosting->server);
-        $order['customfields']['OrderID'] = $orderID;
+        $server = $this->getServer($hosting->server_id);
+        $order['config']['extra_details']['option4'] = $orderID;
         $params = array_merge($server, $order);
         $this->checkOrder($params, $hosting);
     }

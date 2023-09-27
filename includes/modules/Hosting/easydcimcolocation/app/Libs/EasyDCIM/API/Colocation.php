@@ -27,4 +27,15 @@ class Colocation extends AbstractEasyDCIMAPI
     {
         return $this->api->get()->execut('colocation/' . $this->params->getEasyServerID());
     }
+
+    /**
+     * EasyDCIM Device - Show device information
+     * @documentation https://www.easydcim.com/api/index.html#api-Device-Retrieve
+     * @return object
+     * @throws string error
+     */
+    public function showColocationPowerPorts()
+    {
+        return $this->api->get()->execut('colocation/' . $this->params->getEasyServerID().'/power-ports');
+    }
 }

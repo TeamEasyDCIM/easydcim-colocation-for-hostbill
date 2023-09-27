@@ -239,21 +239,24 @@
                         <script src="{$assetsURL}/js/serviceActions.js"></script>
 
                         <div id="layers">
-                            <div class="lu-col-md-12">
-                                <div class="lu-h5 lu-m-b-3x lu-m-t-2x">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.statusWidgetTitle}</div>
-                                <div class="lu-tiles lu-row lu-row--eq-height">
-                                    {if $configuration.AutoLoginLink == 'on'}
-                                        <div class="lu-col-xs-6 lu-col-md-20p">
-                                            <a href="{$autoLoginLink}" target="_blank" class="lu-tile lu-tile--btn lu-tooltip drop-target drop-abutted drop-abutted-top drop-element-attached-bottom drop-element-attached-center drop-target-attached-top drop-target-attached-center">
-                                                <div class="lu-i-c-6x">
-                                                    <img class="serviceActionsImages" src="{$assetsURL}/img/logIntopanel.png" alt="">
-                                                </div>
-                                                <span class="lu-tile__title">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.logIntoPanel.logIntoPanel}</span>
-                                            </a>
-                                        </div>
-                                    {/if}
+                            {if $configuration.AutoLoginLink == 'on'}
+                                <div class="lu-col-md-12">
+                                    <div class="lu-h5 lu-m-b-3x lu-m-t-2x">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.statusWidgetTitle}</div>
+                                    <div class="lu-tiles lu-row lu-row--eq-height">
+                                        {if $configuration.AutoLoginLink == 'on'}
+                                            <div class="lu-col-xs-6 lu-col-md-20p">
+                                                <a href="javascript:;" class="lu-tile lu-tile--btn lu-tooltip drop-target drop-abutted drop-abutted-top drop-element-attached-bottom drop-element-attached-center drop-target-attached-top drop-target-attached-center" onclick="generateServiceActionsModal(this,'{$lang.serverAA.adminServicesTabFields.logInToPanelInstance.logInToPanelForm.confirmLogInToPanelInstance}','logIntoPanel')">
+                                                    <div class="lu-i-c-6x">
+                                                        <img class="serviceActionsImages" src="{$assetsURL}/img/logIntopanel.png" alt="">
+                                                    </div>
+                                                    <span class="lu-tile__title">{$lang.serverAA.adminServicesTabFields.logInToPanelInstance.modal.logInToPanelInstance}</span>
+                                                </a>
+                                            </div>
+                                        {/if}
+                                    </div>
                                 </div>
-                            </div>
+                            {/if}
+                            {if $configuration.Model == 'on' || $configuration.Label == 'on' || $configuration.Location == 'on' || $configuration.LabeledRackWithPosition == 'on' || $configuration.IPAddresses == 'on'}
                             <div class="lu-row">
                                 <div class="lu-col-md-12">
                                     <div class="lu-widget widgetActionComponent vueDatatableTable">
@@ -291,6 +294,13 @@
                                                                 </tr>
                                                             {/if}
 
+                                                            {if $configuration.LabeledRackWithPosition == 'on'}
+                                                                <tr role="row">
+                                                                    <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.location.tableField.labeledRackWithPosition}</td>
+                                                                    <td>{$details.labeledRackWithPosition}</b></td>
+                                                                </tr>
+                                                            {/if}
+
                                                             {if $configuration.IPAddresses == 'on'}
                                                                 <tr role="row">
                                                                     <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.ipaddresses}</td>
@@ -311,6 +321,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {/if}
                         </div>
                     {/if}
                 </div>
@@ -523,69 +534,80 @@
                     <script src="{$assetsURL}/js/serviceActions.js"></script>
 
                     <div id="layers">
-                        <div class="lu-col-md-12">
-                            <div class="lu-h5 lu-m-b-3x lu-m-t-2x">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.statusWidgetTitle}</div>
-                            <div class="lu-tiles lu-row lu-row--eq-height">
-                                {if $configuration.AutoLoginLink == 'on'}
-                                    <div class="lu-col-xs-6 lu-col-md-20p">
-                                        <a href="{$autoLoginLink}" target="_blank" class="lu-tile lu-tile--btn lu-tooltip drop-target drop-abutted drop-abutted-top drop-element-attached-bottom drop-element-attached-center drop-target-attached-top drop-target-attached-center">
-                                            <div class="lu-i-c-6x">
-                                                <img class="serviceActionsImages" src="{$assetsURL}/img/logIntopanel.png" alt="">
-                                            </div>
-                                            <span class="lu-tile__title">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.logIntoPanel.logIntoPanel}</span>
-                                        </a>
-                                    </div>
-                                {/if}
-                            </div>
-                        </div>
-                        <div class="lu-row">
+                        {if $configuration.AutoLoginLink == 'on'}
                             <div class="lu-col-md-12">
-                                <div class="lu-widget widgetActionComponent vueDatatableTable">
-                                    <div class="lu-widget__header">
-                                        <div class="lu-widget__top lu-top">
-                                            <div class="lu-top__title">
-                                                {$lang.serverAA.servicePageIntegration.mainContainer.details.tableTitle}
+                                <div class="lu-h5 lu-m-b-3x lu-m-t-2x">{$lang.serverAA.servicePageIntegration.mainContainer.statusWidget.statusWidgetTitle}</div>
+                                <div class="lu-tiles lu-row lu-row--eq-height">
+                                    {if $configuration.AutoLoginLink == 'on'}
+                                        <div class="lu-col-xs-6 lu-col-md-20p">
+                                            <a href="javascript:;" class="lu-tile lu-tile--btn lu-tooltip drop-target drop-abutted drop-abutted-top drop-element-attached-bottom drop-element-attached-center drop-target-attached-top drop-target-attached-center" onclick="generateServiceActionsModal(this,'{$lang.serverAA.adminServicesTabFields.logInToPanelInstance.logInToPanelForm.confirmLogInToPanelInstance}','logIntoPanel')">
+                                                <div class="lu-i-c-6x">
+                                                    <img class="serviceActionsImages" src="{$assetsURL}/img/logIntopanel.png" alt="">
+                                                </div>
+                                                <span class="lu-tile__title">{$lang.serverAA.adminServicesTabFields.logInToPanelInstance.modal.logInToPanelInstance}</span>
+                                            </a>
+                                        </div>
+                                    {/if}
+                                </div>
+                            </div>
+                        {/if}
+                        {if $configuration.Model == 'on' || $configuration.Label == 'on' || $configuration.Location == 'on' || $configuration.LabeledRackWithPosition == 'on' || $configuration.IPAddresses == 'on'}
+                            <div class="lu-row">
+                                <div class="lu-col-md-12">
+                                    <div class="lu-widget widgetActionComponent vueDatatableTable">
+                                        <div class="lu-widget__header">
+                                            <div class="lu-widget__top lu-top">
+                                                <div class="lu-top__title">
+                                                    {$lang.serverAA.servicePageIntegration.mainContainer.details.tableTitle}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="lu-widget__body">
-                                        <div data-table-container="" data-check-container="" class="lu-t-c  datatableLoader">
-                                            <div class="dataTables_wrapper no-footer">
-                                                <div>
-                                                    <table width="100%" role="grid" class="lu-table lu-table--mob-collapsible dataTable no-footer dtr-column" style="margin-top:0px!important">
-                                                        <tbody>
-                                                        {if $configuration.Model == 'on'}
-                                                            <tr role="row">
-                                                                <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.model}</td>
-                                                                <td>{$details.model}</b></td>
-                                                            </tr>
-                                                        {/if}
+                                        <div class="lu-widget__body">
+                                            <div data-table-container="" data-check-container="" class="lu-t-c  datatableLoader">
+                                                <div class="dataTables_wrapper no-footer">
+                                                    <div>
+                                                        <table width="100%" role="grid" class="lu-table lu-table--mob-collapsible dataTable no-footer dtr-column" style="margin-top:0px!important">
+                                                            <tbody>
+                                                            {if $configuration.Model == 'on'}
+                                                                <tr role="row">
+                                                                    <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.model}</td>
+                                                                    <td>{$details.model}</b></td>
+                                                                </tr>
+                                                            {/if}
 
-                                                        {if $configuration.Label == 'on'}
-                                                            <tr role="row">
-                                                                <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.label}</td>
-                                                                <td>{$details.label}</b></td>
-                                                            </tr>
-                                                        {/if}
+                                                            {if $configuration.Label == 'on'}
+                                                                <tr role="row">
+                                                                    <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.label}</td>
+                                                                    <td>{$details.label}</b></td>
+                                                                </tr>
+                                                            {/if}
 
-                                                        {if $configuration.Location == 'on'}
-                                                            <tr role="row">
-                                                                <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.location}</td>
-                                                                <td>{$details.location}</b></td>
-                                                            </tr>
-                                                        {/if}
+                                                            {if $configuration.Location == 'on'}
+                                                                <tr role="row">
+                                                                    <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.location}</td>
+                                                                    <td>{$details.location}</b></td>
+                                                                </tr>
+                                                            {/if}
 
-                                                        {if $configuration.IPAddresses == 'on'}
-                                                            <tr role="row">
-                                                                <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.ipaddresses}</td>
-                                                                <td>{$details.ipaddresses}</b></td>
-                                                            </tr>
-                                                        {/if}
-                                                        </tbody>
-                                                    </table>
-                                                    <div class="lu-preloader-container lu-preloader-container--full-screen lu-preloader-container--overlay" style="display: none;">
-                                                        <div class="lu-preloader lu-preloader--sm">
+                                                            {if $configuration.LabeledRackWithPosition == 'on'}
+                                                                <tr role="row">
+                                                                    <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.location.tableField.labeledRackWithPosition}</td>
+                                                                    <td>{$details.labeledRackWithPosition}</b></td>
+                                                                </tr>
+                                                            {/if}
 
+                                                            {if $configuration.IPAddresses == 'on'}
+                                                                <tr role="row">
+                                                                    <td class="informationTablesWidth">{$lang.serverAA.servicePageIntegration.mainContainer.details.tableField.ipaddresses}</td>
+                                                                    <td>{$details.ipaddresses}</b></td>
+                                                                </tr>
+                                                            {/if}
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="lu-preloader-container lu-preloader-container--full-screen lu-preloader-container--overlay" style="display: none;">
+                                                            <div class="lu-preloader lu-preloader--sm">
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -594,7 +616,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {/if}
                     </div>
 
 

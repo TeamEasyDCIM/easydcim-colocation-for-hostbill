@@ -1,18 +1,20 @@
 <link href="{$assetsURL}/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="{$assetsURL}/css/datatables.min.css">
 <link rel="stylesheet" href="{$assetsURL}/css/layers-ui.css">
 <link rel="stylesheet" href="{$assetsURL}/css/mg_styles.css">
 <link rel="stylesheet" href="{$assetsURL}/css/select2.css">
+<script src="{$assetsURL}/js/datatables.js"></script>
 <script src="{$assetsURL}/js/select2.js"></script>
 <script src="{$assetsURL}/js/index.js"></script>
 <script src="{$assetsURL}/js/powerOutlets.js"></script>
 <div id="layers">
     <div class="lu-row">
         <div class="lu-col-md-12">
-            <div class="lu-widget widgetActionComponent vueDatatableTable">
+            <div class="lu-widget">
                 <div class="lu-widget__header">
                     <div class="lu-widget__top lu-top">
                         <div class="lu-top__title">
-                            {$lang.serverAA.servicePageIntegration.mainContainer.powerOutlets.powerOutlets}
+                           {$lang.serverAA.servicePageIntegration.mainContainer.powerOutlets.powerOutlets}
                         </div>
                     </div>
                 </div>
@@ -21,7 +23,7 @@
                          class="lu-t-c  datatableLoader">
                         <div class="dataTables_wrapper no-footer">
                             <div>
-                                <table width="100%" role="grid"
+                                <table id="powerOutlets" width="100%" role="grid"
                                        class="lu-table lu-table--mob-collapsible dataTable no-footer dtr-column">
                                     <thead>
                                     <tr role="row">
@@ -36,12 +38,12 @@
                                     <tbody>
                                     {foreach from=$rawObject->powerOutlets->getData() key=myId item=i}
                                         <tr id="{$i.id}" role="row">
-                                            <td>{if $i.status == 'outletOn' }<span style="color: green; "><i class="fa fa-check-circle fa-2x"></i></span>{else}<span style="color: red; "><i class="fa fa-times-circle fa-2x"></i></span>{/if}</td>
+                                            <td>{if $i.status == 'outletOn' || $i.status == 'up'}<span class="lu-label lu-label--success lu-label--status">{$lang.enabled}</span>{else}<span class="lu-label lu-label--success lu-label--status">{$lang.disabled}</span>{/if}</td>
                                             <td>{$i.number}</td>
                                             <td>{$i.label}</td>
                                             <td>{$lang.serverAA.servicePageIntegration.mainContainer.powerOutlets.tableField[$i.state]}</td>
                                             <td>{$i.device}</td>
-                                            <td><a href="javascript:;" onclick="loadChangeStateModal('{$i.id}')" data-toggle="lu-tooltip" class="lu-btn lu-btn--link lu-btn--plain lu-btn--default lu-tooltip drop-target" data-title="Change State"><i class="lu-btn__icon lu-zmdi lu-zmdi-edit"></i></a></td>
+                                            <td><a href="javascript:;" onclick="loadChangeStateModal('{$i.id}')" data-toggle="lu-tooltip" class="lu-btn lu-btn--link lu-btn--plain lu-btn--default lu-tooltip drop-target" data-title="Change Power Outlet State"><i class="lu-btn__icon lu-zmdi lu-zmdi-edit"></i></a></td>
                                         </tr>
                                     {/foreach}
                                     </tbody>

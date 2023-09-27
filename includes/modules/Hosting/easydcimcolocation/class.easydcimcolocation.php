@@ -11,7 +11,7 @@ use ModulesGarden\Servers\EasyDCIMv2\App\Api\EasyDCIMConfigFactory;
 
 class easydcimcolocation extends HostingModule implements Observer
 {
-    protected $version = '1.1';
+    protected $version = '1.0.1';
 
     protected $commands = ['updateOrderInformation'=>'Update Order Information'];
 

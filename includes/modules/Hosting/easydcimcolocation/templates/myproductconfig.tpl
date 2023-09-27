@@ -212,6 +212,15 @@
                                                     </div>
                                                 </label></div>
                                             <div  class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
+            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.leftSection.locationInfo.LabeledRack.LabeledRack}</span>
+                                                    <div  class="lu-switch"><input type="checkbox" name="options[LabeledRackWithPosition]"
+                                                                                   {if $moduleConfiguration->LabeledRackWithPosition == 'on'}checked{/if}
+                                                                                   onchange="checkOptionUnderSection(event)"
+                                                                                   class="lu-switch__checkbox"> <span
+                                                                class="lu-switch__container"><span class="lu-switch__handle"></span></span>
+                                                    </div>
+                                                </label></div>
+                                            <div  class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
             {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.leftSection.serviceInfo.IPAddresses.IPAddresses}</span>
                                                     <div  class="lu-switch"><input type="checkbox" name="options[IPAddresses]"
                                                                                   {if $moduleConfiguration->IPAddresses == 'on'}checked{/if}
@@ -220,11 +229,57 @@
                                                                 class="lu-switch__container"><span class="lu-switch__handle"></span></span>
                                                     </div>
                                                 </label></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="modules" class="lu-widget">
+                            <div class="lu-widget__header">
+                                <div class="lu-widget__top lu-top">
+                                    <div class="lu-top__title">
+                                        {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.modules}
+                                    </div>
+                                    <div class="lu-top__toolbar" style="padding-top: 15px;">
+                                        <div onchange="checkSection('',[],event)"
+                                             class="lu-form-check lu-m-b-2x configSelectAllButton"><label><span
+                                                        class="lu-form-text">
+                            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.modulesSelectAll.modulesSelectAll}</span>
+                                                <div class="lu-switch"><input type="checkbox" name="modulesSelectAll"
+                                                                              class="lu-switch__checkbox">
+                                                    <span class="lu-switch__container"><span
+                                                                class="lu-switch__handle"></span></span></div>
+                                            </label></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lu-widget__body">
+                                <div class="lu-widget__content">
+                                    <div class="lu-row">
+                                        <div class="lu-col-md-6 lu-p-r-4x">
                                             <div  class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
-            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.leftSection.serviceInfo.HideHostingInformation.HideHostingInformation}</span>
+            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.DevicesTraffic.DevicesTraffic}</span>
                                                     <div class="lu-switch"><input type="checkbox"
-                                                                                  name="options[HideHostingInformation]"
-                                                                                  {if $moduleConfiguration->HideHostingInformation == 'on'}checked{/if}
+                                                                                  name="options[TrafficStatistics]"
+                                                                                  {if $moduleConfiguration->TrafficStatistics == 'on'}checked{/if}
+                                                                                  onchange="checkOptionUnderSection(event)"
+                                                                                  class="lu-switch__checkbox"> <span
+                                                                class="lu-switch__container"><span class="lu-switch__handle"></span></span>
+                                                    </div>
+                                                </label></div>
+                                            <div class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
+            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.PowerUsageStatistics.PowerUsageStatistics}</span>
+                                                    <div class="lu-switch"><input type="checkbox" name="options[PowerUsageStatistics]"
+                                                                                  {if $moduleConfiguration->PowerUsageStatistics == 'on'}checked{/if}
+                                                                                  onchange="checkOptionUnderSection(event)"
+                                                                                  class="lu-switch__checkbox"> <span
+                                                                class="lu-switch__container"><span class="lu-switch__handle"></span></span>
+                                                    </div>
+                                                </label></div>
+                                            <div class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
+            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.PowerOutlets.PowerOutlets}</span>
+                                                    <div class="lu-switch"><input type="checkbox" name="options[PowerOutlets]"
+                                                                                  {if $moduleConfiguration->PowerOutlets == 'on'}checked{/if}
                                                                                   onchange="checkOptionUnderSection(event)"
                                                                                   class="lu-switch__checkbox"> <span
                                                                 class="lu-switch__container"><span class="lu-switch__handle"></span></span>
@@ -320,19 +375,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="modules" class="lu-widget">
+                        <div id="blockTrafficStatisticsTables" class="lu-widget">
                             <div class="lu-widget__header">
                                 <div class="lu-widget__top lu-top">
                                     <div class="lu-top__title">
-                                        {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.modules}
+                                        {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.blockTrafficStatisticsTables.blockTrafficStatisticsTables}
                                     </div>
                                     <div class="lu-top__toolbar" style="padding-top: 15px;">
                                         <div onchange="checkSection('',[],event)"
                                              class="lu-form-check lu-m-b-2x configSelectAllButton"><label><span
                                                         class="lu-form-text">
-                            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.modulesSelectAll.modulesSelectAll}</span>
+                            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.blockTrafficStatisticsTables.blockTrafficStatisticsTablesSelectAll.blockTrafficStatisticsTablesSelectAll}</span>
                                                 <div class="lu-switch"><input type="checkbox" name="modulesSelectAll"
-                                                                               class="lu-switch__checkbox">
+                                                                              class="lu-switch__checkbox">
                                                     <span class="lu-switch__container"><span
                                                                 class="lu-switch__handle"></span></span></div>
                                             </label></div>
@@ -344,28 +399,58 @@
                                     <div class="lu-row">
                                         <div class="lu-col-md-6 lu-p-r-4x">
                                             <div  class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
-            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.DevicesTraffic.DevicesTraffic}</span>
+            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.blockTrafficStatisticsTables.BlockBandwidthUsageTable.BlockBandwidthUsageTable}</span>
                                                     <div class="lu-switch"><input type="checkbox"
-                                                                                  name="options[TrafficStatistics]"
-                                                                                  {if $moduleConfiguration->TrafficStatistics == 'on'}checked{/if}
+                                                                                  name="options[BlockBandwidthUsageTable]"
+                                                                                  {if $moduleConfiguration->BlockBandwidthUsageTable == 'on'}checked{/if}
                                                                                   onchange="checkOptionUnderSection(event)"
                                                                                   class="lu-switch__checkbox"> <span
                                                                 class="lu-switch__container"><span class="lu-switch__handle"></span></span>
                                                     </div>
                                                 </label></div>
                                             <div class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
-            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.PowerUsageStatistics.PowerUsageStatistics}</span>
-                                                    <div class="lu-switch"><input type="checkbox" name="options[PowerUsageStatistics]"
-                                                                                  {if $moduleConfiguration->PowerUsageStatistics == 'on'}checked{/if}
+            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.blockTrafficStatisticsTables.BlockNetworkPortsTable.BlockNetworkPortsTable}</span>
+                                                    <div class="lu-switch"><input type="checkbox" name="options[BlockNetworkPortsTable]"
+                                                                                  {if $moduleConfiguration->BlockNetworkPortsTable == 'on'}checked{/if}
                                                                                   onchange="checkOptionUnderSection(event)"
                                                                                   class="lu-switch__checkbox"> <span
                                                                 class="lu-switch__container"><span class="lu-switch__handle"></span></span>
                                                     </div>
                                                 </label></div>
-                                            <div class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
-            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.modules.PowerOutlets.PowerOutlets}</span>
-                                                    <div class="lu-switch"><input type="checkbox" name="options[PowerOutlets]"
-                                                                                  {if $moduleConfiguration->PowerOutlets == 'on'}checked{/if}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                        <div id="blockPowerUsageTables" class="lu-widget">
+                            <div class="lu-widget__header">
+                                <div class="lu-widget__top lu-top">
+                                    <div class="lu-top__title">
+                                        {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.blockPowerUsageTables.blockPowerUsageTables}
+                                    </div>
+                                    <div class="lu-top__toolbar" style="padding-top: 15px;">
+                                        <div onchange="checkSection('',[],event)"
+                                             class="lu-form-check lu-m-b-2x configSelectAllButton"><label><span
+                                                        class="lu-form-text">
+                            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.blockPowerUsageTables.blockPowerUsageTablesSelectAll.blockPowerUsageTablesSelectAll}</span>
+                                                <div class="lu-switch"><input type="checkbox" name="modulesSelectAll"
+                                                                              class="lu-switch__checkbox">
+                                                    <span class="lu-switch__container"><span
+                                                                class="lu-switch__handle"></span></span></div>
+                                            </label></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lu-widget__body">
+                                <div class="lu-widget__content">
+                                    <div class="lu-row">
+                                        <div class="lu-col-md-6 lu-p-r-4x">
+                                            <div  class="lu-form-check lu-m-b-2x"><label><span class="lu-form-text">
+            {$lang.serverAA.productConfig.mainContainer.configForm.clientAreaFeaturesSection.rightSection.blockPowerUsageTables.BlockPowerUsageTable.BlockPowerUsageTable}</span>
+                                                    <div class="lu-switch"><input type="checkbox"
+                                                                                  name="options[BlockPowerUsageTable]"
+                                                                                  {if $moduleConfiguration->BlockPowerUsageTable == 'on'}checked{/if}
                                                                                   onchange="checkOptionUnderSection(event)"
                                                                                   class="lu-switch__checkbox"> <span
                                                                 class="lu-switch__container"><span class="lu-switch__handle"></span></span>
@@ -458,17 +543,31 @@
         <div class="lu-widget__header">
             <div class="lu-widget__top lu-top">
                 <div class="lu-top__title">
-                    Configurable Options
+                    {$lang.serverAA.productConfig.mainContainer.optionsWidget.optionsWidgetTitle}
                 </div>
             </div>
             <div class="lu-top__toolbar"></div>
         </div>
         <div class="lu-widget__body">
             <div class="lu-widget__content config-option-box">
+                <div class="lu-alert lu-alert--sm lu-alert--info lu-alert--faded modal-alert-top mt">
+                    <div class="lu-alert__body">
+                        {$lang.serverAA.productConfig.mainContainer.optionsWidget.message}
+                    </div>
+                </div>
+                <div class="lu-row">
+                    {foreach from=$configurableOptions item=configurableOption}
+                        <div class="lu-col-md-6 lu-p-r-4x config-option text-left">
+                            <b>{$configurableOption.name}
+                                <a href="?cmd=services&action=product&id={$productId}&picked_tab=4" target="_blank">- configure values and pricing</a>
+                            </b>
+                        </div>
+                    {/foreach}
+                </div>
                 <div class="col-md-12 confirm-row">
                     <a id="first" href="javascript:;" class="lu-btn lu-btn--success has-spinner" onclick="createConfigurableOptions(this)">
                         <i class="lu-btn__icon lu-zmdi lu-zmdi-plus"></i>
-                        <span class="lu-btn__text">Create Configurable Options</span>
+                        <span class="lu-btn__text">{$lang.serverAA.productConfig.mainContainer.optionsWidget.addOptionsButton.button.addOptionButtonsTitle}</span>
                     </a>
                 </div>
             </div>
