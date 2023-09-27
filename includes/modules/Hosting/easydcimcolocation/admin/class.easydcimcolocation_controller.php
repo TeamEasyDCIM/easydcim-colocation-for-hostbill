@@ -107,9 +107,6 @@ class easydcimcolocation_controller extends HBController
             $this->serviceActions = new ServiceActions($this->api,$this->client);
             $this->autoLoginLink = new AutoLoginLink();
             $this->details = new Details($this->api);
-//            echo '<pre>';
-//            print_r($this->details->getDetailsInformation());
-//            die;
 
 
             if (isset($_GET['graphs']))
